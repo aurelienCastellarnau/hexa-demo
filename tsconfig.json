@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "target": "ES6",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@service/*": ["src/service/*"],
+      "@controller/*": ["src/controller/*"],
+      "@domain/*" : ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "*": ["node_modules/*"],
+    },
+
+  },
+  "include": ["src/**/*", "test/**/*"],
+}
