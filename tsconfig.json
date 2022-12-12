@@ -13,6 +13,7 @@
       "@controller/*": ["src/controller/*"],
       "@domain/*" : ["src/domain/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
+      "@whatistheproblem/*": ["src/1-what-is-the-problem/*"],
       "*": ["node_modules/*"],
     },
 

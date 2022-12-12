@@ -5,7 +5,7 @@ import {
     existsSync as exist
 } from "fs";
 
-export class ExpenseFileService {
+export class FileService {
 
     public writeFile = (path: string, content: string): Promise<string> => {
         return new Promise((resolve, reject) => {

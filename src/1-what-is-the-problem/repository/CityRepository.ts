@@ -1,17 +1,19 @@
 import { FileService } from "../service/FileService";
-import { Expense } from "../Model/Expense";
+import { City } from "../Model/City";
 
 interface Config {
     host: string
 }
 
-export class ExpenseRepository {
+// intrication des services
+// même si la config est dynamisée le testing est rendu compliqué
+export class CityRepository {
     private config: Config;
     private fileService: FileService;
 
-    constructor (config: Config, fileService: FileService) {
+    constructor (config: Config) {
         this.config = config;
-        this.fileService = fileService;
+        this.fileService = new FileService();
     };
 
     private configValidator = () => {
@@ -32,7 +34,7 @@ export class ExpenseRepository {
         })
     }
 
-    public add = (expense: Expense): Promise<string> => {
+    public add = (city: City): Promise<string> => {
         return new Promise((resolve, reject) => {
             this.configValidator();
 
@@ -43,14 +45,14 @@ export class ExpenseRepository {
                             let parsedContent: any[];
                             try {
                                 parsedContent = <any[]> JSON.parse(storageContent);
-                                parsedContent.push(expense);
+                                parsedContent.push(city);
                             } catch (err) {
                                 reject(err);
                                 return;
                             }
                             this.fileService.writeFile(this.config.host, JSON.stringify(parsedContent))
-                                .then(expense => {
-                                    resolve(expense)
+                                .then(city => {
+                                    resolve(city)
                                 });
                         });
                 })

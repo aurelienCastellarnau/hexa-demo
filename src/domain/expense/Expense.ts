@@ -4,6 +4,7 @@ export interface Expense {
     amount: number
 }
 
+// runtime type hint
 export const isExpense = (input: any): input is Expense => {
     let invalidProperties = [];
 
@@ -22,6 +23,7 @@ export const isExpense = (input: any): input is Expense => {
     return true;
 }
 
+// runtime type hint
 export const isIdentifiedExpense = (input: any): input is Expense => {
     isExpense(input);
     if (!input.hasOwnProperty('id') || !input.id) {
