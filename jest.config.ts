@@ -94,6 +94,7 @@ export default {
     "@service/(.*)": "<rootDir>/src/service/$1",
     "@domain/(.*)": "<rootDir>/src/domain/$1",
     "@infrastructure/(.*)": "<rootDir>/src/infrastructure/$1",
+    "@whatistheproblem/(.*)": "<rootDir>/src/1-what-is-the-problem/$1",
   },
   
 
