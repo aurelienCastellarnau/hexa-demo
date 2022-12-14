@@ -1,7 +1,7 @@
 import { ServiceA } from "./serviceA";
 import { Dependance } from "./dependance";
 
-class Controller {
+export class Controller {
     private serviceA: ServiceA;
     private dependance: Dependance;
 
