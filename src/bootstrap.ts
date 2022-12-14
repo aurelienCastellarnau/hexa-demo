@@ -27,6 +27,7 @@ export const bootstrap = (app: Express) => {
     }
     const expenseController = new ExpenseController(
         parseBodyToExpenseHandler(),
+        // middlewares
         addExpenseHandler(expenseDependencies)
     );
 
